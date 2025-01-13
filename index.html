@@ -1,105 +1,127 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boutique en ligne</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/5f8c4760a3.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <header>
         <nav class="navbar">
+            <h1 class="logo" style="color: rgb(255, 119, 0);">LOGO</h1>
             <ul>
                 <li><a href="#">Accueil</a></li>
                 <li><a href="#products">Produits</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#form_panier" id="link_click">Panier
+                        <div class="cpt_prd"><span id="increment">0</span></div>
+                </a></li>
+                <li><a href="#form_favoris" id="link_favoris">Favoris</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <!--partie hero-->
+        <!-- Partie Hero -->
         <section class="hero">
-         <h1 class="logo" style="color: rgb(255, 119, 0);">LOGO</h1>
-          <div class="hero_contenu"> 
-           <h1>Mobiles & Accessoires Mobiles</h1> 
-           <p>Connectez-vous où que vous soyez !</p> 
-           <button class="btn">VOIR TOUT L'UNIVERS MOBILE </button> 
-          </div> 
-        </section>
-        <h1>Nos Produits</h1>
-        <!--présentations des articles -->
-        <section id="products">
-            <div class="product">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN5vQl22AHNJaIpOwsY3AvA6ue5cvwdt2bMw&s" alt="Produit 1">
-                <h2>Produit 1</h2>
-                <p>Description du produit 1</p>
-                <button>Acheter maintenant</button>
+            <div class="hero_contenu">
+                <h1>Mobiles & Accessoires Mobiles</h1>
+                <p>Connectez-vous où que vous soyez !</p>
+                <button class="btn">VOIR TOUT L'UNIVERS MOBILE </button>
             </div>
-            <div class="product">
-                <img src="https://images.samsung.com/is/image/samsung/p6pim/n_africa/2401/gallery/n-africa-galaxy-s24-s928-sm-s928bztqmwd-thumb-539326547?$344_344_PNG$" alt="Produit 2">
+        </section>
+
+        <h1>Nos Produits</h1>
+        <section id="products">
+            <!-- Product 1 -->
+            <div class="product" id="prd1">
+                <div class="iconFavoris" onclick="Favoris('prd1')"><i class="fa-solid fa-heart" style="color: #ff8000;"></i></div>   
+                <img src="https://images.samsung.com/is/image/samsung/p6pim/n_africa/2401/gallery/n-africa-galaxy-s24-s928-sm-s928bztqmwd-thumb-539326547?$344_344_PNG$" alt="Galaxy A55 5G">
                 <h2>Galaxy A55 5G</h2>
                 <p>Description du produit 2</p>
-                <button>Acheter maintenant</button>
-            </div>            
-            <div class="product">
-                <img src="https://images.samsung.com/is/image/samsung/p6pim/n_africa/2401/gallery/n-africa-galaxy-s24-plus-sm-s926bzvcmwd-thumb-539303493?$344_344_PNG$" alt="Produit 3">
+                <p><span class="prix">5400</span> dh</p>
+                <button class="btn_add" onclick="ajouterPanier('prd1')">Acheter maintenant</button>
+                <div class="plus_remove">
+                    <button class="btn_plus" onclick="cpt_plus('prd1', 'cpt1')">+</button>
+                    <span id="cpt1" class="cpt">1</span>
+                    <button class="btn_minus" onclick="cpt_munis('prd1', 'cpt1')">-</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product" id="prd2">
+                <div class="iconFavoris" onclick="Favoris('prd2')"><i class="fa-solid fa-heart" style="color: #ff8000;"></i></div>   
+                <img src="https://images.samsung.com/is/image/samsung/p6pim/n_africa/2401/gallery/n-africa-galaxy-s24-plus-sm-s926bzvcmwd-thumb-539303493?$344_344_PNG$"
+                    alt="Produit 3">
                 <h2>Produit 3</h2>
                 <p>Description du produit 3</p>
-                <button>Acheter maintenant</button>
-            </div> 
-            <div class="product">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJRGvu6IERyxyS2TzCZ5nGny8B-b_G_z1cbg&s" alt="Produit 4">
+                <p><span class="prix">1500</span> dh</p>
+                <button class="btn_add" onclick="ajouterPanier('prd2')">Acheter maintenant</button>
+                <div class="plus_remove">
+                    <button class="btn_plus" onclick="cpt_plus('prd2', 'cpt2')">+</button>
+                    <span id="cpt2" class="cpt">1</span>
+                    <button class="btn_minus" onclick="cpt_munis('prd2','cpt2')">-</button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product" id="prd3">
+                <div class="iconFavoris" onclick="Favoris('prd3')"><i class="fa-solid fa-heart" style="color: #ff8000;"></i></div>   
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJRGvu6IERyxyS2TzCZ5nGny8B-b_G_z1cbg&s"
+                    alt="Produit 4">
                 <h2>Produit 4</h2>
                 <p>Description du produit 4</p>
-                <button>Acheter maintenant</button>
+                <p><span class="prix">1250</span> dh</p>
+                <button class="btn_add" onclick="ajouterPanier('prd3')">Acheter maintenant</button>
+                <div class="plus_remove">
+                    <button class="btn_plus" onclick="cpt_plus('prd3','cpt3')">+</button>
+                    <span id="cpt3" class="cpt">1</span>
+                    <button class="btn_minus" onclick="cpt_munis('prd3','cpt3')">-</button>
+                </div>
             </div>
-            <div class="product">
-                <img src="https://media.ldlc.com/r1600/mktp/product/6f49/009c/c426/4eea/9167/5761/52d1/6f49009cc4264eea9167576152d1ce62.webp" alt="Produit 5">
+
+            <!-- Product 4 -->
+            <div class="product" id="prd4">
+                <div class="iconFavoris" onclick="Favoris('prd4')"><i class="fa-solid fa-heart" style="color: #ff8000;"></i></div>   
+                <img src="https://media.ldlc.com/r1600/mktp/product/6f49/009c/c426/4eea/9167/5761/52d1/6f49009cc4264eea9167576152d1ce62.webp"
+                    alt="Avizar Coque Samsung Galaxy A25 5G">
                 <h2>Avizar Coque </h2>
                 <p>Samsung Galaxy A25 5G </p>
-                <button>Acheter maintenant</button>
+                <p><span class="prix">2500</span> dh</p>
+                <button class="btn_add" onclick="ajouterPanier('prd4')">Acheter maintenant</button>
+                <div class="plus_remove">
+                    <button class="btn_plus" onclick="cpt_plus('prd4','cpt4')">+</button>
+                    <span id="cpt4" class="cpt">1</span>
+                    <button class="btn_minus" onclick="cpt_munis('prd4','cpt4')">-</button>
+                </div>
             </div>
-            <div class="product">
-                <img src="https://cdn2.coolaccesorios.com/57507-large_default/cool-case-for-samsung-a256-galaxy-a25-5g-smooth-pink-cord.jpg" alt="Produit 6">
-                <h2>Coque COOL </h2>
-                <p>Samsung A256 Galaxy A25 5G</p>
-                <button>Acheter maintenant</button>
-            </div> 
-            <div class="product">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN5vQl22AHNJaIpOwsY3AvA6ue5cvwdt2bMw&s" alt="Produit 7">
-                <h2>Produit 7</h2>
-                <p>Description du produit 7</p>
-                <button>Acheter maintenant</button>
-            </div> 
-            <div class="product">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFPBv5iZa31v9yD4lNq3BqgxPrmUuSeCUPNw&s" alt="Produit 8">
-                <h2>Samsung A71</h2>
-                <p>Case Coque arrière antichoc</p>
-                <button>Acheter maintenant</button>
-            </div> 
+
         </section>
-         <!--section contact-->
-        <section id="contact" class="contact">
-            <h2>Contactez-nous</h2>
-            <form class="form">
-                <label for="name">Nom :</label>
-                <input type="text" id="name" placeholder="Tapez votre nom ici" required>
-                <label for="email">Email :</label>
-                <input type="email" id="email" placeholder="Tapez votre email ici" required>
-                <label for="message">Message :</label>
-                <textarea id="message" rows="5" placeholder="Laissez votre message ici" required></textarea>
-                <button type="submit">Envoyer</button>
-            </form>
+
+        <!-- Sidebar Panier -->
+        <section id="form_panier" >
         </section>
+    <!-- Sidebar liste des favories -->
+     <section id="form_favoris" >
+
+     </section>
+
+
     </main>
-    <!--footer -->
-    <footer>
-        <p>&copy; 2024 Boutique en ligne. Tous droits réservés.</p>
-        <div class="réseaux_sociaux">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
-        </div>
-    </footer>
+
+    <script src="script.js"></script>
+
+   
+
 </body>
+
 </html>
+
+
+
+
+
