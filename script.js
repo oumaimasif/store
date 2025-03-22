@@ -299,7 +299,7 @@ function gereSection(sectionId) {
 
 }
 
-// la gestions des clics
+// la gestions des clicks
 document.getElementById("link_click").addEventListener("click", function(){
     gereSection("form_panier");
 });
